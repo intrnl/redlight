@@ -1,0 +1,43 @@
+:root {
+	font-family: sans-serif;
+}
+
+
+:root {
+	--main-background: #ffffff;
+	--main-text: #000000;
+	--alt-text: #404040;
+	--quote-text: #006400;
+
+	--link-normal: #2562dc;
+	--link-visited: #7395d9;
+}
+
+
+body {
+	background: var(--main-background);
+	color: var(--main-text);
+	max-width: 768px;
+	padding: 16px;
+	margin: 0 auto;
+	overflow-x: hidden;
+}
+
+:root, input, .button, textarea, table {
+  font-size: 14px;
+}
+
+a[href] {
+	color: var(--link-normal);
+	text-decoration: none;
+}
+a[href]:visited {
+	color: var(--link-visited);
+}
+
+
+#svelte {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}

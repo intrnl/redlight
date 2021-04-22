@@ -1,0 +1,9 @@
+dist/
+node_modules/
+
+.svelte/
+.vercel_build_output/
+
+npm-*.log
+pnpm-*.log
+yarn-*.log
