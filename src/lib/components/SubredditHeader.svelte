@@ -44,11 +44,14 @@
 		z-index: 1;
 	}
 
+	.subreddit {
+		font-weight: bold;
+	}
+
 	.sort-nav {
 		display: flex;
 		gap: 8px;
 	}
-
 	.sort-nav a {
 		color: var(--link-normal);
 	}
@@ -58,10 +61,11 @@
 	}
 
 	.page-nav {
+		display: flex;
+		gap: 8px;
 		margin-inline-start: auto;
 	}
-
-	.subreddit {
-		font-weight: bold;
+	.page-nav a {
+		color: var(--link-normal);
 	}
 </style>
