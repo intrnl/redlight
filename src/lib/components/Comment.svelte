@@ -14,7 +14,7 @@
 	$: parsed_html = parse_markdown(decode_entities(data.body));
 </script>
 
-<details class='comment' class:nested={level > 0} open={open}>
+<details class='comment' open={open}>
 	<summary class='byline'>
 		<a class='author' href='/u/{data.author}'>{data.author}</a>
 		<Dot />
@@ -35,11 +35,6 @@
 </details>
 
 <style>
-	.nested {
-		padding-left: 8px;
-		border-left: 1px dotted var(--alt-text);
-	}
-
 	.byline {
 		opacity: 0.65;
 	}
@@ -56,6 +51,8 @@
 		flex-direction: column;
 		gap: 16px;
 		margin-top: 8px;
+		padding-left: 8px;
+		border-left: 1px dotted var(--alt-text);
 	}
 	.child:empty {
 		display: none;
