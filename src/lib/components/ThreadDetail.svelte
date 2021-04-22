@@ -1,7 +1,7 @@
 <script>
-	import { parse_markdown } from '$lib/markdown.js';
-	import { decode_entities } from '$lib/html.js';
 	import Thread from '$lib/components/Thread.svelte';
+
+	import { transform_html } from '$lib/html.js';
 
 	export let data;
 	$: post = data.children[0].data;
@@ -27,7 +27,7 @@
 {/if}
 
 {#if post.selftext}
-	<div class='details content'>{@html parse_markdown(decode_entities(post.selftext))}</div>
+	<div class='details content'>{@html transform_html(post.selftext_html)}</div>
 {/if}
 
 <style>

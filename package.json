@@ -9,7 +9,6 @@
 		"start": "svelte-kit start"
 	},
 	"dependencies": {
-		"marked": "^2.0.3",
 		"svelte": "^3.37.0"
 	},
 	"devDependencies": {

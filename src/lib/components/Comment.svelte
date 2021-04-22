@@ -3,15 +3,13 @@
 
 	import { format_number } from '$lib/number.js';
 	import { diff_time, to_utc } from '$lib/time.js';
-	import { parse_markdown } from '$lib/markdown.js';
-	import { decode_entities } from '$lib/html.js';
+	import { transform_html } from '$lib/html.js';
 
 	export let data;
 	export let level = 0;
 	export let index = 0;
 
 	$: open = !data.collapsed && level < 3 && index < 3;
-	$: parsed_html = parse_markdown(decode_entities(data.body));
 </script>
 
 <details class='comment' open={open}>
@@ -22,7 +20,7 @@
 		<Dot />
 		<span class='score'>{data.score > 0 ? '+' : ''}{format_number(data.score)}</span>
 	</summary>
-	<div class='content'>{@html parsed_html}</div>
+	<div class='content'>{@html transform_html(data.body_html)}</div>
 	<div class='child'>
 		{#if data.replies?.data?.children}
 			{#each data.replies.data.children as child, index}
