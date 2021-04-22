@@ -33,7 +33,7 @@
 </script>
 
 <svelte:head>
-	<title>r/{subreddit} {sort}</title>
+	<title>r/{subreddit}</title>
 </svelte:head>
 
 <SubredditHeader subreddit={subreddit} sort={sort} data={data} />

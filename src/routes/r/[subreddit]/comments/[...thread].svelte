@@ -27,8 +27,12 @@
 	export let comments = null;
 
 	$: subreddit = $page.params.subreddit;
+	$: title = parent.children[0].data.title;
 </script>
 
+<svelte:head>
+	<title>{title} | r/{subreddit}</title>
+</svelte:head>
 
 <SubredditHeader subreddit={subreddit} />
 <ThreadDetail data={parent} />
