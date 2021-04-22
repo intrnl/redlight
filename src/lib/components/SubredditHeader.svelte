@@ -7,10 +7,13 @@
 
 	export let data = null;
 
-	$: count = $page.query.has('count') ? parseInt($page.query.get('count')) : 0;
-	$: length = data?.children.length;
-	$: before = data?.children[0].data.name;
-	$: after = data?.children[data.children.length - 1].data.name;
+	$: page_count = $page.query.has('page') ? parseInt($page.query.get('page')) : 0;
+
+	$: before_id = data?.children[0]?.data.name;
+	$: after_id = data?.after;
+
+	$: before_href = `/r/${subreddit}/${sort}?page=${page_count - 1}&before=${before_id}`;
+	$: after_href = `/r/${subreddit}/${sort}?page=${page_count + 1}&after=${after_id}`;
 </script>
 
 <div class='subreddit-header'>
@@ -24,11 +27,11 @@
 
 	{#if data}
 		<div class='page-nav'>
-			{#if count}
-				<a href='/r/{subreddit}/{sort}?count={Math.min(0, count - length)}&before={before}'>prev</a>
+			{#if page_count > 0 && before_id}
+				<a href={before_href}>prev</a>
 			{/if}
-			{#if length >= ITEM_PER_PAGE}
-				<a href='/r/{subreddit}/{sort}?count={count + length}&after={after}'>next</a>
+			{#if after_id}
+				<a href={after_href}>next</a>
 			{/if}
 		</div>
 	{/if}

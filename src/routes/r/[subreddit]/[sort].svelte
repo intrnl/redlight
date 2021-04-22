@@ -1,5 +1,5 @@
 <script context='module'>
-	import { BASE_URL, FEED_SORT } from '$lib/api.js';
+	import { BASE_URL, ITEM_PER_PAGE, FEED_SORT } from '$lib/api.js';
 
 	/** @type {import('@sveltejs/kit').Load} */
 	export async function load ({ page: { params, query } }) {
@@ -10,7 +10,8 @@
 		}
 
 		let url = new URL(`${BASE_URL}/r/${subreddit}/${sort}.json`);
-		if (query.has('count')) url.searchParams.set('count', query.get('count'));
+		url.searchParams.set('count', ITEM_PER_PAGE);
+		if (query.has('page')) url.searchParams.set('page', query.get('page'));
 		if (query.has('before')) url.searchParams.set('before', query.get('before'));
 		if (query.has('after')) url.searchParams.set('after', query.get('after'));
 
