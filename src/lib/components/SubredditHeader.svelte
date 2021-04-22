@@ -1,6 +1,6 @@
 <script>
 	import { page } from '$app/stores';
-	import { FEED_SORT } from '$lib/api.js';
+	import { FEED_SORT, ITEM_PER_PAGE } from '$lib/api.js';
 
 	export let subreddit;
 	export let sort = null;
@@ -27,7 +27,9 @@
 			{#if count}
 				<a href='/r/{subreddit}/{sort}?count={Math.min(0, count - length)}&before={before}'>prev</a>
 			{/if}
-			<a href='/r/{subreddit}/{sort}?count={count + length}&after={after}'>next</a>
+			{#if length == ITEM_PER_PAGE}
+				<a href='/r/{subreddit}/{sort}?count={count + length}&after={after}'>next</a>
+			{/if}
 		</div>
 	{/if}
 </div>

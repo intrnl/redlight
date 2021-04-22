@@ -5,3 +5,5 @@ export let BASE_URL = import.meta.env.DEV
   : 'https://www.reddit.com';
 
 export let FEED_SORT = ['hot', 'new', 'top', 'rising'];
+
+export let ITEM_PER_PAGE = 25;
