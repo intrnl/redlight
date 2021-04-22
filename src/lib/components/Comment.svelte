@@ -20,7 +20,7 @@
 		<Dot />
 		<time class='age' datetime={to_utc(data.created_utc)}>{diff_time(data.created_utc)}</time>
 		<Dot />
-		<span class='score'>+{format_number(data.score)}</span>
+		<span class='score'>{data.score > 0 ? '+' : ''}{format_number(data.score)}</span>
 	</summary>
 	<div class='content'>{@html parsed_html}</div>
 	<div class='child'>
