@@ -2,8 +2,6 @@
 	import Thread from '$lib/components/Thread.svelte';
 
 	export let data;
-
-	$: console.log(data.children);
 </script>
 
 
