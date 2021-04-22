@@ -13,7 +13,7 @@
 	<details class='details auxiliary'>
 		<summary>view video</summary>
 		<!-- svelte-ignore a11y-media-has-caption -->
-		<video controls>
+		<video class='video' controls>
 			<source src={post.media.reddit_video.fallback_url} />
 		</video>
 	</details>
@@ -50,7 +50,7 @@
 		content: '[-]';
 	}
 
-	.image {
+	.image, .video {
 		max-width: 100%;
 	}
 
