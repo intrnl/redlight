@@ -42,7 +42,6 @@
 
 	.byline {
 		opacity: 0.65;
-		list-style-type: none;
 	}
 	.byline a {
 		color: currentColor;
@@ -50,14 +49,6 @@
 
 	.author {
 		font-weight: 500;
-	}
-
-	.comment > .byline::after {
-		content: ' [expand]';
-		content: ' [expand]' / 'expand comment';
-	}
-	.comment[open] > .byline::after {
-		content: unset;
 	}
 
 	.child {

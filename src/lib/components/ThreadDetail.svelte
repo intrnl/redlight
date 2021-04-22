@@ -36,18 +36,8 @@
 	}
 
 	.auxiliary summary {
-		list-style-type: none;
+		color: var(--alt-text);
 		position: relative;
-	}
-	.auxiliary summary::before {
-		content: '[+]';
-		text-align: center;
-		width: 2ch;
-		position: absolute;
-		left: calc((8px + 16px) * -1);
-	}
-	.auxiliary[open] summary::before {
-		content: '[-]';
 	}
 
 	.image, .video {
