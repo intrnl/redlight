@@ -27,7 +27,7 @@
 			{#if count}
 				<a href='/r/{subreddit}/{sort}?count={Math.min(0, count - length)}&before={before}'>prev</a>
 			{/if}
-			{#if length == ITEM_PER_PAGE}
+			{#if length >= ITEM_PER_PAGE}
 				<a href='/r/{subreddit}/{sort}?count={count + length}&after={after}'>next</a>
 			{/if}
 		</div>
