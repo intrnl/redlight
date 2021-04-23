@@ -19,9 +19,12 @@
 
 <script>
 	import { page } from '$app/stores';
+
 	import SubredditHeader from '$lib/components/SubredditHeader.svelte';
 	import ThreadDetail from '$lib/components/ThreadDetail.svelte';
 	import CommentListing from '$lib/components/CommentListing.svelte';
+
+	import { decode_entities } from '$lib/html-entities.js';
 
 	export let parent = null;
 	export let comments = null;
@@ -31,7 +34,7 @@
 </script>
 
 <svelte:head>
-	<title>{title} | r/{subreddit}</title>
+	<title>{decode_entities(title)} | r/{subreddit}</title>
 </svelte:head>
 
 <SubredditHeader subreddit={subreddit} />
