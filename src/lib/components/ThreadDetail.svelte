@@ -90,4 +90,7 @@
 	.content :global(ul) {
 		padding-left: 25px;
 	}
+	.content :global(ol) {
+		padding-left: 20px;
+	}
 </style>
